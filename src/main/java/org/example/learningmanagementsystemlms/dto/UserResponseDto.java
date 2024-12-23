@@ -1,41 +1,28 @@
-package org.example.learningmanagementsystemlms.Model;
+package org.example.learningmanagementsystemlms.dto;
 
-import jakarta.persistence.*;
-
-
-public class User {
-
+public class UserResponseDto {
     private Long id;
-
     private String name;
-
     private String email;
+    private String role;
 
-    private String password;
-
-    private String role; // e.g., Admin, Instructor, Student
-
-    // Constructor
-
-    public User() {
+    public UserResponseDto() {
     }
 
-    public User(Long id, String name, String email, String password, String role) {
+    public UserResponseDto(Long id, String name, String email, String role) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.password = password;
         this.role = role;
     }
 
     // Getters and Setters
+    public Long getId() {
+        return id;
+    }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getId(){
-        return id;
     }
 
     public String getName() {
@@ -54,14 +41,6 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getRole() {
         return role;
     }
@@ -70,5 +49,3 @@ public class User {
         this.role = role;
     }
 }
-
-

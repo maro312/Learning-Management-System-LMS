@@ -1,23 +1,15 @@
-package org.example.learningmanagementsystemlms.Model;
+package org.example.learningmanagementsystemlms.dto;
 
-import jakarta.persistence.*;
-import java.time.LocalDateTime;
-import java.util.List;
-
-
-public class Course {
-
-    private Long id;
+public class CourseCreationDto {
     private String title;
     private String description;
     private int duration; // Duration in days
-    private Long instructorId;
+    private Long instructorId; // ID of the instructor
 
-    // Constructors
-    public Course() {}
+    public CourseCreationDto() {
+    }
 
-    public Course(Long id, String title, String description, int duration, Long instructorId) {
-        this.id = id;
+    public CourseCreationDto(String title, String description, int duration, Long instructorId) {
         this.title = title;
         this.description = description;
         this.duration = duration;
@@ -25,14 +17,6 @@ public class Course {
     }
 
     // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -65,5 +49,3 @@ public class Course {
         this.instructorId = instructorId;
     }
 }
-
-

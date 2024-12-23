@@ -1,26 +1,19 @@
-package org.example.learningmanagementsystemlms.Model;
+package org.example.learningmanagementsystemlms.dto;
 
-import jakarta.persistence.*;
-import java.time.LocalDateTime;
-
-
-public class Notification {
-
+public class NotificationDto {
     private Long id;
-    private Long userId; // Recipient of the notification
+    private Long userId;
     private String message;
     private boolean isRead;
-    private LocalDateTime createdAt;
 
-    // Constructors
-    public Notification() {}
+    public NotificationDto() {
+    }
 
-    public Notification(Long id, Long userId, String message, boolean isRead, LocalDateTime createdAt) {
+    public NotificationDto(Long id, Long userId, String message, boolean isRead) {
         this.id = id;
         this.userId = userId;
         this.message = message;
         this.isRead = isRead;
-        this.createdAt = createdAt;
     }
 
     // Getters and Setters
@@ -54,13 +47,5 @@ public class Notification {
 
     public void setRead(boolean read) {
         isRead = read;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
     }
 }

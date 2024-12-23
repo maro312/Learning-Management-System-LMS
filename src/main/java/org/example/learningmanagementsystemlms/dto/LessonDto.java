@@ -1,20 +1,15 @@
-package org.example.learningmanagementsystemlms.Model;
+package org.example.learningmanagementsystemlms.dto;
 
-import jakarta.persistence.*;
-
-
-public class Lesson {
-
-
+public class LessonDto {
     private Long id;
     private String title;
-    private String content; // This can be text or a file reference
+    private String content; // Could be text or file path
     private Long courseId;
 
-    // Constructors
-    public Lesson() {}
+    public LessonDto() {
+    }
 
-    public Lesson(Long id, String title, String content, Long courseId) {
+    public LessonDto(Long id, String title, String content, Long courseId) {
         this.id = id;
         this.title = title;
         this.content = content;

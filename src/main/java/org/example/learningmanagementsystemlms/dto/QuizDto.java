@@ -1,24 +1,23 @@
-package org.example.learningmanagementsystemlms.Model;
+package org.example.learningmanagementsystemlms.dto;
 
-import jakarta.persistence.*;
+import org.example.learningmanagementsystemlms.Model.Question;
 
+import java.util.List;
 
-public class Lesson {
-
-
+public class QuizDto {
     private Long id;
     private String title;
-    private String content; // This can be text or a file reference
     private Long courseId;
+    private List<Question> questions;
 
-    // Constructors
-    public Lesson() {}
+    public QuizDto() {
+    }
 
-    public Lesson(Long id, String title, String content, Long courseId) {
+    public QuizDto(Long id, String title, Long courseId, List<Question> questions) {
         this.id = id;
         this.title = title;
-        this.content = content;
         this.courseId = courseId;
+        this.questions = questions;
     }
 
     // Getters and Setters
@@ -38,19 +37,19 @@ public class Lesson {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     public Long getCourseId() {
         return courseId;
     }
 
     public void setCourseId(Long courseId) {
         this.courseId = courseId;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
     }
 }

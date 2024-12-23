@@ -1,20 +1,15 @@
-package org.example.learningmanagementsystemlms.Model;
+package org.example.learningmanagementsystemlms.dto;
 
-import jakarta.persistence.*;
-
-
-public class Question {
-
-
+public class QuestionDto {
     private Long id;
     private String questionText;
     private String questionType; // MCQ, True/False, Short Answer
     private String correctAnswer;
 
-    // Constructors
-    public Question() {}
+    public QuestionDto() {
+    }
 
-    public Question(Long id, String questionText, String questionType, String correctAnswer) {
+    public QuestionDto(Long id, String questionText, String questionType, String correctAnswer) {
         this.id = id;
         this.questionText = questionText;
         this.questionType = questionType;

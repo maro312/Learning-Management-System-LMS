@@ -1,29 +1,33 @@
-package org.example.learningmanagementsystemlms.Model;
+package org.example.learningmanagementsystemlms.dto;
 
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-
-public class Assignment {
-
+public class AssignmentDto {
     private Long id;
     private String title;
     private String description;
     private Long courseId;
-    private String dueDate; // ISO-8601 format
+    private LocalDateTime dueDate; // ISO-8601 format (e.g., "2024-01-01T23:59:59")
 
-    // Constructors
-    public Assignment() {}
+    public AssignmentDto() {
+    }
 
-    public Assignment(Long id, String title, String description, Long courseId, LocalDateTime dueDate) {
+    public AssignmentDto(Long id, String title, String description, Long courseId, String dueDate) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.courseId = courseId;
-        this.dueDate = String.valueOf(dueDate);
+        this.dueDate = LocalDateTime.parse(dueDate);
     }
 
-//    public Assignment(Long id, String title, String description, Long courseId, LocalDateTime dueDate) {
+
+
+//    public AssignmentDto(Long id, String title, String description, Long courseId, LocalDateTime dueDate) {
+//        this.id = id,
+//        this.title = title,
+//        this.description = description,
+//        this.courseId = courseId,
+//        this.dueDate = dueDate
 //    }
 
     // Getters and Setters
@@ -59,11 +63,11 @@ public class Assignment {
         this.courseId = courseId;
     }
 
-    public String getDueDate() {
+    public LocalDateTime getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(String dueDate) {
+    public void setDueDate(LocalDateTime dueDate) {
         this.dueDate = dueDate;
     }
 }

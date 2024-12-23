@@ -1,22 +1,18 @@
-package org.example.learningmanagementsystemlms.Model;
+package org.example.learningmanagementsystemlms.dto;
 
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-
-public class Enrollment {
-
-
+public class EnrollmentDto {
     private Long id;
-    private Long studentId; // Reference to the user ID of the student
-    private Long courseId; // Reference to the course ID
-    private String status; // e.g., "Enrolled", "Completed"
+    private Long studentId;
+    private Long courseId;
+    private String status;
     private LocalDateTime enrolledAt;
 
     // Constructors
-    public Enrollment() {}
+    public EnrollmentDto() {}
 
-    public Enrollment(Long id, Long studentId, Long courseId, String status, LocalDateTime enrolledAt) {
+    public EnrollmentDto(Long id, Long studentId, Long courseId, String status, LocalDateTime enrolledAt) {
         this.id = id;
         this.studentId = studentId;
         this.courseId = courseId;
